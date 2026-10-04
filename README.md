@@ -206,11 +206,7 @@ HIGH
 
 🔗 SignalScope — Claim & News Language Analyzer
 
-Add your GitHub Pages URL here after deployment.
-
-Example:
-
-https://yourusername.github.io/Claim-News-Language-Analyzer/
+https://maheshbommini-stack.github.io/SignalScope/
 
 ---
 
