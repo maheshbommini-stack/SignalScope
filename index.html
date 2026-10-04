@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SignalScope — Claim & News Language Analyzer</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <div class="brand">
+
+      <span class="brand-mark">⌁</span>
+
+      <div>
+        <strong>SignalScope</strong>
+        <small>LINGUISTIC INTELLIGENCE</small>
+      </div>
+
+    </div>
+
+    <div class="status">
+      <i></i>
+      ANALYSIS ENGINE ONLINE
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="shell">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="eyebrow">
+        TEXT & SPEECH ANALYSIS / 09
+      </div>
+
+      <h1>
+        Read the <span>signals</span><br>
+        behind the headline.
+      </h1>
+
+      <p>
+        Paste a claim, headline, or news statement.
+        SignalScope scans its language for sensational,
+        emotional, urgent and exaggerated patterns.
+      </p>
+
+    </section>
+
+
+    <!-- INPUT + SCORE -->
+    <section class="workspace">
+
+      <!-- INPUT PANEL -->
+      <div class="input-panel">
+
+        <div class="panel-head">
+
+          <span>01 / INPUT</span>
+
+          <span id="counter">
+            0 / 5000
+          </span>
+
+        </div>
+
+
+        <textarea
+          id="claimInput"
+          maxlength="5000"
+          placeholder="Paste a headline or claim here...
+
+Example:
+BREAKING! Scientists reveal an unbelievable discovery that will change everything!"
+        ></textarea>
+
+
+        <div class="toolbar">
+
+          <button
+            id="exampleBtn"
+            class="ghost"
+          >
+            LOAD EXAMPLE
+          </button>
+
+
+          <button
+            id="clearBtn"
+            class="ghost"
+          >
+            CLEAR
+          </button>
+
+
+          <button
+            id="analyzeBtn"
+            class="analyze"
+          >
+            SCAN SIGNALS
+            <span>→</span>
+          </button>
+
+        </div>
+
+
+        <p id="error" class="error"></p>
+
+      </div>
+
+
+      <!-- SCORE PANEL -->
+      <div class="score-panel">
+
+        <div class="panel-head">
+
+          <span>02 / RISK INDEX</span>
+
+          <span id="riskTag">
+            WAITING
+          </span>
+
+        </div>
+
+
+        <div
+          class="score-ring"
+          id="scoreRing"
+        >
+
+          <div>
+
+            <strong id="score">
+              --
+            </strong>
+
+            <small>
+              /100
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <h2 id="riskTitle">
+          Awaiting text
+        </h2>
+
+
+        <p id="riskDescription">
+          Enter a claim and scan its linguistic signals.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+    <section class="results">
+
+      <div class="section-title">
+
+        <span>
+          03 / SIGNAL BREAKDOWN
+        </span>
+
+        <span id="styleLabel">
+          —
+        </span>
+
+      </div>
+
+
+      <!-- METRICS -->
+      <div class="metrics">
+
+        <article>
+
+          <small>
+            WORDS
+          </small>
+
+          <strong id="words">
+            —
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <small>
+            SENTENCES
+          </small>
+
+          <strong id="sentences">
+            —
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <small>
+            SENSATIONAL
+          </small>
+
+          <strong id="sensational">
+            —
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <small>
+            EMOTIONAL
+          </small>
+
+          <strong id="emotional">
+            —
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <small>
+            URGENCY
+          </small>
+
+          <strong id="urgency">
+            —
+          </strong>
+
+        </article>
+
+
+        <article>
+
+          <small>
+            EXAGGERATION
+          </small>
+
+          <strong id="exaggeration">
+            —
+          </strong>
+
+        </article>
+
+      </div>
+
+
+      <!-- LOWER GRID -->
+      <div class="lower-grid">
+
+
+        <!-- FINDINGS -->
+        <div class="findings">
+
+          <div class="subhead">
+            DETECTED PATTERNS
+          </div>
+
+
+          <div
+            id="findingList"
+            class="finding-list"
+          >
+
+            <span class="empty">
+              No scan performed yet.
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- LANGUAGE PROFILE -->
+        <div class="radar">
+
+          <div class="subhead">
+            LANGUAGE PROFILE
+          </div>
+
+
+          <div class="bars">
+
+
+            <div>
+
+              <span>
+                SENSATIONAL
+              </span>
+
+              <b>
+                <i id="barSensational"></i>
+              </b>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                EMOTIONAL
+              </span>
+
+              <b>
+                <i id="barEmotional"></i>
+              </b>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                URGENCY
+              </span>
+
+              <b>
+                <i id="barUrgency"></i>
+              </b>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                EXAGGERATION
+              </span>
+
+              <b>
+                <i id="barExaggeration"></i>
+              </b>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- DISCLAIMER -->
+      <div class="disclaimer">
+
+        <span>
+          ⓘ
+        </span>
+
+        <p>
+
+          <strong>
+            Linguistic analysis, not fact verification.
+          </strong>
+
+          A high score means the wording contains more
+          potentially attention-grabbing signals.
+          It does not prove that a claim is true or false.
+
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    SignalScope · Educational NLP Project ·
+    Text & Speech Analysis
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
